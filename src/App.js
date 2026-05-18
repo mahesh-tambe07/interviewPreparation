@@ -550,7 +550,6 @@ export default function InterviewPrep() {
     const data = dataMap[activeRound];
 
     return data.map((sec, si) => (
-    return data.map((sec, si) => (
       <div key={si} style={{marginBottom: "20px"}}>
         <div className="sec-head">
           <div className="sec-icon" style={{background: `${sec.color}18`, border: `1px solid ${sec.color}25`}}>{sec.icon}</div>
