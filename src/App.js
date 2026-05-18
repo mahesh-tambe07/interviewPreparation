@@ -485,26 +485,6 @@ function QCard({ item, idx, color, open, onToggle }) {
   );
 }
 
-function TechSection({ sec, color }) {
-  const [openQ, setOpenQ] = useState(null);
-  return (
-    <div style={{marginBottom: "20px"}}>
-      <div className="sec-head">
-        <div className="sec-icon" style={{background: `${color}20`, border: `1px solid ${color}30`}}>{sec.icon}</div>
-        <div>
-          <div className="sec-title">{sec.section}</div>
-          <div className="sec-count">{sec.qs.length} questions</div>
-        </div>
-      </div>
-      <div className="q-list">
-        {sec.qs.map((q, i) => (
-          <QCard key={i} item={q} idx={i} color={sec.color} open={openQ === i} onToggle={() => setOpenQ(openQ === i ? null : i)} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function DSAView() {
   const [open, setOpen] = useState(null);
   const priorityOrder = ["must", "high", "med"];
@@ -568,9 +548,8 @@ export default function InterviewPrep() {
 
     const dataMap = { hr: HR_DATA, tech: TECH_DATA, sd: SD_DATA, beh: BEH_DATA, go: GO_TECH };
     const data = dataMap[activeRound];
-    const roundColor = ROUNDS.find(r => r.id === activeRound)?.color;
 
-    let globalIdx = 0;
+    return data.map((sec, si) => (
     return data.map((sec, si) => (
       <div key={si} style={{marginBottom: "20px"}}>
         <div className="sec-head">
@@ -581,14 +560,11 @@ export default function InterviewPrep() {
           </div>
         </div>
         <div className="q-list">
-          {sec.qs.map((q, qi) => {
-            const absIdx = globalIdx++;
-            return (
-              <QCard key={qi} item={q} idx={qi} color={sec.color}
-                open={openQ === `${si}-${qi}`}
-                onToggle={() => setOpenQ(openQ === `${si}-${qi}` ? null : `${si}-${qi}`)} />
-            );
-          })}
+          {sec.qs.map((q, qi) => (
+            <QCard key={qi} item={q} idx={qi} color={sec.color}
+              open={openQ === `${si}-${qi}`}
+              onToggle={() => setOpenQ(openQ === `${si}-${qi}` ? null : `${si}-${qi}`)} />
+          ))}
         </div>
       </div>
     ));
