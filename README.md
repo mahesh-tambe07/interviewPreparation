@@ -1,70 +1,167 @@
-# Getting Started with Create React App
+# 🎯 Complete Interview Prep — Question Bank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautifully designed, fully interactive interview preparation app covering all 6 major interview rounds with priority-ranked questions, detailed answers, and DSA topic-wise problem lists.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat&logo=react&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
+![Questions](https://img.shields.io/badge/Questions-60+-orange?style=flat)
+![DSA Problems](https://img.shields.io/badge/DSA%20Problems-80+-red?style=flat)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📸 Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> Dark-themed · Priority-ranked · Click to reveal answers · DSA patterns included
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📦 What's Inside
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Round | Topics Covered | Questions |
+|-------|---------------|-----------|
+| 👤 HR | Self intro, salary negotiation, situational, why this company | 9 |
+| 💻 Technical | OOP/SOLID, Data Structures, OS/Memory, Databases, Networking & APIs | 22 |
+| 🏗️ System Design | URL shortener, Chat app, Rate limiter, Twitter feed, Notifications, CAP theorem | 10 |
+| 🧩 DSA | 11 topics, 80+ must-solve problems, patterns, difficulty tags | 80+ |
+| ⭐ Behavioural | STAR stories, leadership, conflict resolution, mentoring | 7 |
+| 🐹 Go Specific | GMP scheduler, GC internals, escape analysis, concurrency, project structure | 12 |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 DSA Topics — Priority Ranked
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Priority | Topics |
+|----------|--------|
+| 🔴 MUST | Arrays & Strings, HashMap & HashSet, Linked List, Stack & Queue, Trees, Binary Search |
+| 🟡 HIGH | Graphs, Dynamic Programming, Heap / Priority Queue, Backtracking |
+| 🟢 MED | Tries (for senior / FAANG rounds) |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each DSA topic includes:
+- Key patterns to learn (Two Pointers, Sliding Window, Mono Stack, etc.)
+- Must-solve problems with difficulty tags (Easy / Medium / Hard)
+- Approach notes for each problem
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Option 1 — Vite (recommended)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm create vite@latest interview-prep -- --template react
+cd interview-prep
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Replace `src/App.jsx` with `interview_prep_complete.jsx`, update `src/main.jsx`:
 
-## Learn More
+```jsx
+import App from './interview_prep_complete'
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run dev
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open [http://localhost:5173](http://localhost:5173)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Option 2 — Create React App
 
-### Analyzing the Bundle Size
+```bash
+npx create-react-app interview-prep
+cd interview-prep
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Replace `src/App.js` with `interview_prep_complete.jsx`, then:
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open [http://localhost:3000](http://localhost:3000)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎨 No Extra Dependencies Needed
 
-### Deployment
+The app uses only:
+- **React 18** — state management
+- **Google Fonts** (Syne + DM Mono) — loaded via CDN in the component
+- **No UI library** — pure CSS with custom variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+No `npm install` for any UI packages required.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🧭 How to Use the App
+
+- **Round tabs** at the top — switch between HR, Technical, System Design, DSA, Behavioural, Go
+- **Click any question card** — expands full answer + 💡 pro interview tip
+- **Priority badges** on every question:
+  - 🔴 MUST — prepare before any interview
+  - 🟡 HIGH — important for product company roles
+  - 🟢 MED — senior or FAANG-level rounds
+- **DSA tab** — click any topic to expand key patterns + problems list
+- **Progress bar** shows which round you're on
+
+---
+
+## 📚 Study Strategy
+
+### For Service-based companies (TCS, Infosys, Wipro, Cognizant)
+1. Complete all **HR** questions first
+2. Do **Technical** — OOP, SOLID, Databases (ACID, indexing)
+3. DSA 🔴 MUST topics only
+
+### For Product companies (Razorpay, Zepto, Meesho, Groww, etc.)
+1. **Technical** — all sections thoroughly
+2. **DSA** — 🔴 MUST + 🟡 HIGH topics
+3. **System Design** — all questions
+4. **Behavioural** — prepare 5 STAR stories
+
+### For FAANG / Top-tier (Google, Amazon, Flipkart, etc.)
+1. Everything above **+**
+2. DSA — all 11 topics including 🟢 MED
+3. **Go Specific** if applying for Go roles
+4. System Design — go deep on tradeoffs
+
+---
+
+## 📁 Project Structure
+
+```
+interview-prep/
+├── src/
+│   ├── interview_prep_complete.jsx   # Entire app (single file)
+│   └── main.jsx                      # Entry point
+├── public/
+├── package.json
+└── README.md
+```
+
+---
+
+## 🤝 Contributing
+
+Want to add more questions, fix answers, or add a new round?
+
+1. Fork the repo
+2. Add questions to the relevant data array inside the `.jsx` file
+3. Open a pull request
+
+Ideas for contributions:
+- Java / Python / Node.js specific round
+- SQL query practice section
+- Company-specific question sets (Amazon LP, Google SWE)
+
+---
+
+## 📄 License
+
+MIT — free to use, share, and modify.
+
+---
+
+> If this helped you crack an interview, drop a ⭐ on the repo — it helps others find it too!
